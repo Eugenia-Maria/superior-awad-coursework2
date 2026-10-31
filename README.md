@@ -12,6 +12,208 @@ QTN 1 C
 ![alt text](image.png)
 ![alt text](image.png)
 ## About Laravel
+![alt text](image.png)![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-2.png)
+![alt text](image-2.png)
+![alt text](image-2.png)
+![alt text](image-2.png)
+
+DOCUMENT USER ROLES AND SAMPLE LOGIN CREDENTIALS
+# Student Management System
+
+## 1. Project Description
+
+The Student Management System is a web-based application developed using Laravel and PHP. It helps manage students, courses and course registrations.
+
+The system provides different user roles to control access to the available features.
+
+## 2. Technologies Used
+
+- PHP
+- Laravel Framework
+- MySQL Database
+- HTML
+- CSS
+- JavaScript
+- Blade Templates
+- Composer
+- Node.js and NPM
+
+## 3. Installation Instructions
+
+Follow these steps to install and run the Student Management System.
+
+### Step 1: Install the Requirements
+
+Make sure the following software is installed:
+
+- PHP (version compatible with the project)
+- Composer
+- MySQL
+- Node.js and NPM
+- XAMPP or another local server environment
+- Git
+
+### Step 2: Download the Project
+
+Clone the project repository:
+
+```bash
+git https://github.com/Eugenia-Maria/superior-awad-coursework2.git
+```
+
+Navigate into the project folder:
+
+```bash
+cd superiorsstudentmgtsystem
+```
+
+### Step 3: Install Dependencies
+
+Install the PHP dependencies:
+
+```bash
+composer install
+```
+
+Install the frontend dependencies:
+
+```bash
+npm install
+```
+
+### Step 4: Configure the Environment
+
+Create the environment configuration file:
+
+```bash
+copy .env.example .env
+```
+
+Generate the application key:
+
+```bash
+php artisan key:generate
+```
+
+### Step 5: Configure the Database
+
+1. Start Apache and MySQL using XAMPP.
+2. Open phpMyAdmin.
+3. Create a new MySQL database named `student_management_system`.
+4. Open the `.env` file in the project.
+5. Update the database configuration:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=student_management_system
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+Note: Update the database name, username and password to match your local MySQL configuration.
+
+### Step 6: Run Database Migrations
+
+Run the following command to create the database tables:
+
+```bash
+php artisan migrate
+```
+
+If the project has database seeders configured, run:
+
+```bash
+php artisan db:seed
+```
+
+### Step 7: Build Frontend Assets
+
+Run:
+
+```bash
+npm run build
+```
+
+### Step 8: Start the Application
+
+Run the Laravel development server:
+
+```bash
+php artisan serve
+```
+
+Open the application in your browser:
+
+```text
+http://127.0.0.1:8000
+```
+
+## 4. User Roles and Responsibilities
+
+The system supports three user roles:
+
+### Administrator
+
+The Administrator has access to the management features of the system.
+
+Responsibilities include:
+
+- Viewing and managing student records.
+- Adding, editing and deleting students.
+- Managing courses.
+- Viewing course registrations.
+- Registering students for courses.
+- Deleting course registrations.
+
+### Lecturer
+
+The Lecturer has access to the lecturer dashboard.
+
+The lecturer role is provided with a separate dashboard to support lecturer-related activities.
+
+### Student
+
+The Student has access to the student dashboard.
+
+Responsibilities and available features include:
+
+- Accessing the student dashboard.
+- Viewing their registered courses through the My Courses page.
+- Accessing their profile.
+
+## 5. Sample Login Credentials
+
+Use the sample accounts created for the application to test the different user roles.
+
+| User Role     | Email Address        | Password      |
+| ------------- | -------------------- | ------------- |
+| Administrator | admin@gmail.com     | Admin12345    |
+| Lecturer      | lecturer1@gmail.com | Lecturer12345 |
+| Student       | student1@gmail.com  | Student12345  |
+
+
+
+## 6. Access Control
+
+The application uses authentication and role-based middleware to restrict access to certain features.
+
+- Administrators can access student, course and registration management routes.
+- Lecturers can access the lecturer dashboard.
+- Students can access their dashboard and My Courses page.
+
+Users must log in before accessing protected application features.
+
+## 7. Conclusion
+
+The Student Management System provides a centralized platform for managing student information, courses and course registrations. It uses role-based access control to ensure that users can access features according to their assigned roles.
+
+
+
+
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
@@ -60,3 +262,4 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
