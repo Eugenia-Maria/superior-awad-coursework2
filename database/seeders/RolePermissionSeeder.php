@@ -25,11 +25,13 @@ class RolePermissionSeeder extends Seeder
         foreach ($all as $p) Permission::firstOrCreate(['name' => $p, 'guard_name' => 'web']);// Create permissions
 
         // Create roles and assign permissions
-        Role::firstOrCreate(['name' => 'admin'])->syncPermissions(
+        // Integrator correction: names must match the role:Administrator /
+        // role:Lecturer / role:Student guards used across routes and controllers.
+        Role::firstOrCreate(['name' => 'Administrator'])->syncPermissions(
         ['manage students','manage courses','manage registrations','manage users']);
-        Role::firstOrCreate(['name' => 'lecturer'])->syncPermissions(
+        Role::firstOrCreate(['name' => 'Lecturer'])->syncPermissions(
         ['view assigned courses','view course students']);
-        Role::firstOrCreate(['name' => 'student'])->syncPermissions(
+        Role::firstOrCreate(['name' => 'Student'])->syncPermissions(
         ['view courses','register course','view own registrations']);
     }
 }

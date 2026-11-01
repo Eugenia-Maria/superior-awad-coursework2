@@ -10,13 +10,15 @@ class RegistrationSeeder extends Seeder
 {
     public function run(): void
     {
-        // student number => course codes (these codes exist in your database)
+        // Integrator correction: these codes must match the courses created by
+        // CourseSeeder (BUC3131-BUC3134); the previous BCS101-BCS104 matched
+        // nothing, so every registration was skipped.
         $plan = [
-            '2026/001' => ['BCS101', 'BCS102'],
-            '2026/002' => ['BCS101', 'BCS103'],
-            '2026/003' => ['BCS102', 'BCS104'],
-            '2026/004' => ['BCS101', 'BCS102', 'BCS103'],
-            '2026/005' => ['BCS104'],
+            '2026/001' => ['BUC3131', 'BUC3132'],
+            '2026/002' => ['BUC3131', 'BUC3133'],
+            '2026/003' => ['BUC3132', 'BUC3134'],
+            '2026/004' => ['BUC3131', 'BUC3132', 'BUC3133'],
+            '2026/005' => ['BUC3134'],
         ];
 
         foreach ($plan as $studentNumber => $courseCodes) {

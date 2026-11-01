@@ -14,6 +14,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // Application records are added by users rather than seeded as examples.
+        // Integrator correction: without these calls `migrate --seed` created no
+        // roles and no users, so the role:* middleware denied every request.
+        // Order matters: roles before users, users before courses (lecturer_id),
+        // courses before registrations.
+        $this->call([
+            RolePermissionSeeder::class,
+            UserSeeder::class,
+            CourseSeeder::class,
+            RegistrationSeeder::class,
+        ]);
     }
 }
