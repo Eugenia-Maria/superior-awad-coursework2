@@ -21,7 +21,7 @@ class UserSeeder extends Seeder
                 'password' => Hash::make('password'), // never store plain passwords
             ]
         );
-        $admin->syncRoles('admin'); // give this user the admin role
+        $admin->syncRoles('Administrator'); // must match RolePermissionSeeder
 
         // ---------- LECTURERS ----------
         $lecturers = [
@@ -34,7 +34,7 @@ class UserSeeder extends Seeder
                 ['email' => $email],
                 ['name' => $name, 'password' => Hash::make('password')]
             );
-            $lecturer->syncRoles('lecturer');
+            $lecturer->syncRoles('Lecturer');
         }
 
         // ---------- STUDENTS ----------
@@ -55,7 +55,7 @@ class UserSeeder extends Seeder
                 ['email' => $email],
                 ['name' => "$first $last", 'password' => Hash::make('password')]
             );
-            $user->syncRoles('student');
+            $user->syncRoles('Student');
 
             // Step 2: the student record, found by its unique student number
             Student::updateOrCreate(
