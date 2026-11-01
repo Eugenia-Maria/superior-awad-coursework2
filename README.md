@@ -189,11 +189,11 @@ Responsibilities and available features include:
 
 Use the sample accounts created for the application to test the different user roles.
 
-| User Role     | Email Address        | Password      |
-| ------------- | -------------------- | ------------- |
-| Administrator | admin@gmail.com     | Admin12345    |
-| Lecturer      | lecturer1@gmail.com | Lecturer12345 |
-| Student       | student1@gmail.com  | Student12345  |
+| User Role     | Email Address            | Password   |
+| ------------- | ------------------------ | ---------- |
+| Administrator | admin@example.com        | password   |
+| Lecturer      | grace.nakato@example.com | password   |
+| Student       | john.mukasa@example.com  | password   |
 
 
 
