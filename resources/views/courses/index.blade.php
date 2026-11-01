@@ -53,8 +53,8 @@
                             <tr class="border-b hover:bg-gray-50">
 
                                 {{-- Display course information --}}
-                                <td class="p-3">{{ $course->course_code }}</td>
-                                <td class="p-3">{{ $course->course_name }}</td>
+                                <td class="p-3">{{ $course->code }}</td>
+                                <td class="p-3">{{ $course->title }}</td>
                                 <td class="p-3">{{ $course->description }}</td>
                                 <td class="p-3">{{ $course->credit_units }}</td>
 
