@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -15,11 +14,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        // Integrator correction: without these calls `migrate --seed` created no
+        // roles and no users, so the role:* middleware denied every request.
+        // Order matters: roles before users, users before courses (lecturer_id),
+        // courses before registrations.
+        $this->call([
+            RolePermissionSeeder::class,
+            UserSeeder::class,
+            CourseSeeder::class,
+            RegistrationSeeder::class,
         ]);
     }
 }
